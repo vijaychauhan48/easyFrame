@@ -14,7 +14,7 @@ import java.util.Properties;
  */
 public class ConfigDataProvider {
 	
-	Properties prop;
+	static Properties prop;
 	
 	public ConfigDataProvider(){
 		
@@ -35,21 +35,21 @@ public class ConfigDataProvider {
 		return url;
 	}
 	
-	public String getChromePath(){
-		String chromePath=prop.getProperty("chromePath");
+	public static String getChromePath(){
 		
+		String chromePath=prop.getProperty("chromePath");
 		return chromePath;
 	}
 	
 	public String getfirefoxPath(){
-		String firefoxPath=prop.getProperty("firefoxPath");
 		
+		String firefoxPath=prop.getProperty("firefoxPath");
 		return firefoxPath;
 	}
 	
 	public String getIEPath(){
-		String iePath=prop.getProperty("iePath");
 		
+		String iePath=prop.getProperty("iePath");
 		return iePath;
 	}
 

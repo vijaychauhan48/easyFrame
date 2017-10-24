@@ -18,9 +18,9 @@ import com.easyFrame.dataProvider.ConfigDataProvider;
  */
 public class BrowserFactory {
 	
-	WebDriver driver;
+	static WebDriver driver;
 	
-	public WebDriver getBrowser(String browser){
+	public static WebDriver getBrowser(String browser){
 		
 		if(browser.equalsIgnoreCase("firefox")){
 
@@ -31,7 +31,8 @@ public class BrowserFactory {
 		
 		else if (browser.equalsIgnoreCase("chrome")){
 
-			System.setProperty("webdriver.chrome.driver", DataProviderFactory.getConfig().getChromePath());
+			DataProviderFactory.getConfig();
+			System.setProperty("webdriver.chrome.driver", ConfigDataProvider.getChromePath());
 			
 			driver=new ChromeDriver();
 		}
@@ -50,9 +51,4 @@ public class BrowserFactory {
 		return driver;
 	}
 	
-	public void closeBrowser(WebDriver ldriver){
-		
-		ldriver.quit();
-	}
-
 }
