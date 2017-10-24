@@ -21,7 +21,7 @@ public class PageObject {
 	
 	//This method will clear the field and type into that field
 	public void typeInto(WebElement ele, String value){
-		ele.clear();
+		//ele.clear();
 		ele.sendKeys(value);
 	}
 	
